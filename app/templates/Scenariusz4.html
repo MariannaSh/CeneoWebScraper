@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+
+
+<body>
+
+   <body>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+         <a class="navbar-brand" href="Scenariusz1.html">Strona główna</a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+               <li class="nav-item">
+                  <a class="nav-link" href="Scenariusz2.html">Ekstrakcja opinii</a>
+                  <a></a>
+               </li>
+               <li class="nav-item active">
+                  <a class="nav-link" href="Scenariusz4.html">Lista produktów</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="autor.html">O autorze</a>
+               </li>
+            </ul>
+         </div>
+      </nav>
+      <html lang="en">
+         <head>
+             <meta charset="UTF-8">
+             <meta http-equiv="X-UA-Compatible" content="IE=edge">
+             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+             <title>Lista produktów</title>
+             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+             <title>Lista produktów</title>
+             <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+         </head>
+
+
+
+
+      <table class="table table-striped">
+         <thead class="table-dark">
+             <tr>
+                 <th class="text-center">Nazwa produktu</th>
+                 <th class="text-center">Liczba opinii</th>
+                 <th class="text-center">Średnia ocena</th>
+                 <th class="text-center">Liczba zalet</th>
+                 <th class="text-center">Liczba wad</th>
+                 <th class="text-center">Pobierz opinie</th>
+             </tr>
+         </thead>
+         <tbody>
+             {% for product in products %}
+             <tr class="table-{{ loop.cycle('light', 'secondary') }}">
+                 <td class="text-center"> <a href="products.html", product_id=product.id
+                        ">{{product.name}}</a></td>
+                 <td class="text-center">{{product.whole_count_of_opinions}}</td>
+                 <td class="text-center">{{product.average_score}}</td>
+                 <td class="text-center">{{product.whole_count_of_pros}}</td>
+                 <td class="text-center">{{product.whole_count_of_cons}}</td>
+                 <td class="text-center">
+                     <a href="#" download class="btn btn-primary">JSON</a>
+                     <a href="#" download class="btn btn-primary">CSV</a>
+                     <a href="#" download class="btn btn-primary">XLSX</a>
+                 </td>
+             </tr>
+             {% endfor %}
+         </tbody>
+     </table>
+
+
+         </body>
+         </html>
